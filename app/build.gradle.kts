@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "org.muc.tts"
-        minSdk = 23
+        minSdk = 21
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
@@ -53,6 +53,18 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    constraints {
+        implementation("androidx.core:core") {
+            version {
+                strictly("1.13.1")
+            }
+        }
+        implementation("androidx.core:core-ktx") {
+            version {
+                strictly("1.13.1")
+            }
+        }
+    }
     implementation(libs.muctts)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
